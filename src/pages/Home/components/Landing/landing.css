@@ -1,0 +1,46 @@
+.logo-icon g path {
+    fill: transparent;
+    stroke: #93DD2C;
+    stroke-width: 0.3px;
+    stroke-dasharray: 163px;
+    stroke-dashoffset: 163px;
+    animation: line-animation 1.5s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.logo-letter {
+    animation: letter-animation 1.5s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes line-animation {
+    80% {
+        fill: transparent;
+    }
+    99% {
+        stroke-dashoffset: 326px;
+        stroke-dasharray: 163px;
+    }
+    100% {
+        stroke-dashoffset: 0px;
+        stroke-dasharray: 0px;
+        fill: #93DD2C;
+    }
+}
+@keyframes letter-animation {
+    0% {
+        fill: transparent;
+    }
+    80% {
+        fill: transparent;
+    }
+    99% {
+        stroke-dashoffset: 326px;
+        stroke-dasharray: 163px;
+    }
+    100% {
+        stroke-dashoffset: 0px;
+        stroke-dasharray: 0px;
+        fill: #F4F4F6;
+    }
+}
