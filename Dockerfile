@@ -1,6 +1,5 @@
 #Stage 1
 FROM node:21-alpine as builder
-ENV NODE_ENV production
 WORKDIR /app
 COPY package*.json .
 RUN npm install
@@ -9,7 +8,6 @@ RUN npm run build
 
 #Stage 2
 FROM nginx:1.25.4
-ENV NODE_ENV production
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 COPY --from=builder /app/dist .
