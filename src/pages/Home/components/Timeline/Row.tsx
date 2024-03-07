@@ -1,4 +1,5 @@
-import { Grid, GridItem, Text, Flex, Heading, Box, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Heading, Spacer, Text } from "@chakra-ui/react";
+import { AnimatedCard } from "@src/components/AnimatedCard";
 import React from "react";
 
 
@@ -40,56 +41,61 @@ const DateElement: React.FC<Props> = ({ experience, invert=false }) => {
     )
 }
 
+
 const DescriptionElement: React.FC<Props> = ({ experience, invert=false }) => {
     return (
         <>
-            <Flex>
-                <Heading
-                    as="a"
-                    color="neutral.200"
-                    fontWeight="400"
-                    fontSize="x-large"
-                    textAlign={invert ? "start" : "end"}
-                    display="inline-block"
-                    transform={"translateY(-50%)"}
-                    pr={invert ? '0px' : '15px'}
-                    pl={invert ? '15px' : '0px'}
-                    w="100%"
-                    href={experience.companyUrl}
-                >
-                    {experience.companyName}
-                </Heading>
-            </Flex>
-            {experience.activities.map((activity, i) => (
-                <Flex
-                    key={`actv-${i}`}
-                    flexDirection="column"
-                    bg="neutral.700"
-                    m="20px"
-                    mt="0px"
-                    padding="16px"
-                    borderRadius="16px"
-                >
+            <AnimatedCard>
+                <Flex>
                     <Heading
-                        as="h4"
-                        color="brand.300"
-                        mb="0px"
+                        as="a"
+                        color="neutral.200"
+                        fontWeight="400"
+                        fontSize="x-large"
+                        textAlign={invert ? "start" : "end"}
+                        display="inline-block"
+                        transform={"translateY(-50%)"}
+                        pr={invert ? '0px' : '15px'}
+                        pl={invert ? '15px' : '0px'}
+                        w="100%"
+                        href={experience.companyUrl}
                     >
-                        {activity.position}
+                        {experience.companyName}
                     </Heading>
-                    <Text
-                        pl="16px"
-                        lineHeight="16px"
-                        mb="16px"
-                        color="neutral.100"
-                        fontWeight="300"
-                    >
-                        {activity.startedAt} - {activity.endedAt ?? 'Present'}
-                    </Text>
-                    <Text color="neutral.100" whiteSpace="pre-line">
-                        {activity.description}
-                    </Text>
                 </Flex>
+            </AnimatedCard>
+            {experience.activities.map((activity, i) => (
+                <AnimatedCard>
+                    <Flex
+                        key={`actv-${i}`}
+                        flexDirection="column"
+                        bg="neutral.700"
+                        m="20px"
+                        mt="0px"
+                        padding="16px"
+                        borderRadius="16px"
+                    >
+                        <Heading
+                            as="h4"
+                            color="brand.300"
+                            mb="0px"
+                        >
+                            {activity.position}
+                        </Heading>
+                        <Text
+                            pl="16px"
+                            lineHeight="16px"
+                            mb="16px"
+                            color="neutral.100"
+                            fontWeight="300"
+                        >
+                            {activity.startedAt} - {activity.endedAt ?? 'Present'}
+                        </Text>
+                        <Text color="neutral.100" whiteSpace="pre-line">
+                            {activity.description}
+                        </Text>
+                    </Flex>
+                </AnimatedCard>
             ))}
             <Spacer mb="100px"/>
         </>

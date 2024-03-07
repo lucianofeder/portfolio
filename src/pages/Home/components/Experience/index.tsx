@@ -1,4 +1,4 @@
-import { Flex, Spacer } from "@chakra-ui/react";
+import { Spacer, Flex } from "@chakra-ui/react";
 import React from "react";
 import { SectionTitle } from "../SectionTitle";
 import { Timeline } from "../Timeline";
@@ -6,7 +6,12 @@ import { Timeline } from "../Timeline";
 
 export const Experience: React.FC = () => {
     return (
-        <Flex p="100px" w="100%" flexDirection="column" alignItems="center" as="section">
+        <Flex
+            p="100px"
+            w="100%"
+            flexDirection="column"
+            alignItems="center"
+        >
             <SectionTitle
                 // @ts-ignore
                 id="experience"
