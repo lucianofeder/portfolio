@@ -84,12 +84,15 @@ export const Skill: React.FC<Props> = ({ skillName }) => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <Box w="70px" h="70px">
+            <Box
+                w={{base: "30px", lg:"70px"}}
+                h={{base: "30px", lg:"70px"}}
+            >
                 <Component style={{
                     filter: isHovered ? "grayscale(0%)" : "grayscale(100%)"
                 }} />
             </Box>
-            <Text color="neutral.100">{skillName}</Text>
+            <Text color="neutral.100" fontSize={{base: "12px", lg:"16px"}}>{skillName}</Text>
         </Flex>
     )
 }

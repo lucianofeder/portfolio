@@ -23,7 +23,7 @@ export const AboutSkills: React.FC = () => {
         //         <Skills/ >
         //     </GridItem>
         // </Grid>
-        <Flex flexDirection="column" justifyContent="center" p="100px" bg="neutral.700">
+        <Flex flexDirection="column" justifyContent="center" p={["10px","20px", "50px", "100px"]} bg="neutral.700">
             <About />
             <Spacer mb="100px" />
             <Skills/ >

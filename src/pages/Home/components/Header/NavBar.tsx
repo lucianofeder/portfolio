@@ -3,14 +3,15 @@ import { jumpToElementByID } from "@src/helpers/jumpToID"
 import React from "react"
 
 
-export const NavBar: React.FC = () => {
-    const options = [
-        {"title": "About"},
-        {"title": "Skills"},
-        {"title": "Experience"},
-        // {"title": "Portfolio"},
-        {"title": "Contact"},
-    ]
+interface NavOption {
+  title: string
+}
+
+interface Props {
+  options: NavOption[]
+}
+
+export const NavBar: React.FC<Props> = ({ options }) => {
     return (
       <Flex
         as="nav"

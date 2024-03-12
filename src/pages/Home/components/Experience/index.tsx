@@ -7,7 +7,7 @@ import { Timeline } from "../Timeline";
 export const Experience: React.FC = () => {
     return (
         <Flex
-            p="100px"
+            p={["10px","20px", "50px", "100px"]}
             w="100%"
             flexDirection="column"
             alignItems="center"

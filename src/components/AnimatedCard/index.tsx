@@ -1,4 +1,4 @@
-import { chakra, shouldForwardProp } from "@chakra-ui/react";
+import { chakra, shouldForwardProp, useBreakpointValue } from "@chakra-ui/react";
 import { Variants, isValidMotionProp, motion } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 
@@ -27,11 +27,12 @@ const cardVariants: Variants = {
 };
 
 export const AnimatedCard: React.FC<PropsWithChildren> = ({ children }) => {
+    const isDesktop = useBreakpointValue({ base: false, xl: true }, { ssr: false })
     return (
         <ChakraBox
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: isDesktop ? 0.5 : 0.05 }}
             variants={cardVariants}
         >
             {children}

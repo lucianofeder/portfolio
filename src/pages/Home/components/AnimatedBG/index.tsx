@@ -45,7 +45,7 @@ export const AnimatedBG: React.FC = () => {
                                                 w={`${300 - i*70}px`}
                                                 h={`${300 - i*70}px`}
                                                 opacity="0.3"
-                                                />
+                                              />
             )}
         </div>
     )

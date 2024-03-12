@@ -4,8 +4,23 @@ import React from "react";
 
 export const Contact: React.FC = () => {
     return (
-        <Flex id="contact" w="100%" flexDirection="row" alignItems="center" justifyContent="center" bg="neutral.800" py="100px" as="footer">
-            <Grid w="100%" maxW="1200px" gridTemplateColumns={'repeat(3, 1fr)'}>
+        <Flex
+        as="footer"
+            id="contact"
+            w="100%"
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="center"
+            bg="neutral.800"
+            py={{base: "16px", lg: "100px"}}
+        >
+            <Grid
+                w="100%"
+                maxW="1200px"
+                gridTemplateColumns={{base: '1fr', lg: 'repeat(3, 1fr)'}}
+                gridTemplateRows={{base: 'repeat(3, 1fr)', lg: '1fr'}}
+                gap={{base: "16px", lg: 0}}
+            >
                 <GridItem>
                     <Flex flexDirection="column" justifyContent="center" alignItems="center" flexGrow="1">
                         <Text color="neutral.200">Email</Text>
