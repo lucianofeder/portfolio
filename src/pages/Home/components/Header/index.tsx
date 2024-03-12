@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
             {isDesktop ? (
                 <NavBar options={options} />
             ) : (
-                <Menu isLazy>
+                <Menu isLazy autoSelect={false}>
                     <MenuButton
                         as={IconButton}
                         aria-label='Options'
